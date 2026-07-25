@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where is your business losing money? | Jack, Cork</title>
+<script>document.documentElement.classList.add('js')</script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--petrol:#16282f;--petrol2:#223a44;--ink:#0f1e24;--paper:#F4F2EB;--panel:#FBFAF6;
+    --hivis:#F5B324;--alarm:#C93A20;--moss:#3E6E52;--graphite:#5B6462;--line:#DAD5C6;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Barlow Semi Condensed','Segoe UI',sans-serif;background:var(--ink);color:var(--petrol);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px;position:relative}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:70px;line-height:.94;text-transform:uppercase;letter-spacing:-.01em}
+  h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:38px;line-height:1;text-transform:uppercase;letter-spacing:-.01em}
+  p{font-size:18px;line-height:1.6}
+  @media (max-width:600px){ h1{font-size:44px} h2{font-size:30px} }
+
+  .js .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
+  .js .rv.in{opacity:1;transform:none}
+
+  .seclabel{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--hivis);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .seclabel::before{content:"";width:26px;height:2px;background:var(--hivis)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;text-align:center;padding:21px 22px;background:var(--hivis);color:var(--ink);border:none;border-radius:4px;
+    font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;letter-spacing:.02em;text-transform:uppercase;cursor:pointer;text-decoration:none;
+    box-shadow:6px 6px 0 rgba(0,0,0,.35);transition:transform .12s ease, box-shadow .12s ease}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.4)}
+  .subcta{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#93a6ad;text-align:center;margin-top:14px;letter-spacing:.02em}
+
+  /* HERO: preheader + headline + subheader + cta */
+  .hero{background:var(--ink);color:var(--paper);padding:38px 0 54px;position:relative;overflow:hidden}
+  .hero .ghost{position:absolute;top:-30px;right:-30px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:230px;line-height:.8;color:#fff;opacity:.03;pointer-events:none}
+  .brandrow{display:flex;align-items:center;gap:10px;margin-bottom:20px;position:relative;z-index:2}
+  .brandrow .dot{width:12px;height:12px;border-radius:50%;background:var(--hivis);box-shadow:0 0 0 4px rgba(245,179,36,.18)}
+  .brandrow .nm{font-family:'Barlow Condensed',sans-serif;font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:14px}
+  .brandrow .loc{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#93a6ad}
+  .pre{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;color:var(--hivis);margin-bottom:16px;position:relative;z-index:2}
+  .hero h1{position:relative;z-index:2;margin-bottom:20px}
+  .hero h1 .hl{color:var(--ink);background:var(--hivis);padding:0 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .hero .sub{font-size:21px;color:#d7ddd9;max-width:600px;margin-bottom:28px;position:relative;z-index:2}
+  .hero .cta-wrap{position:relative;z-index:2;max-width:470px}
+  .strip{display:flex;border-top:1px solid #2a3f47;border-bottom:1px solid #2a3f47;margin-top:38px;position:relative;z-index:2}
+  .strip div{flex:1;padding:15px 6px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#c7d0cd;border-left:1px solid #2a3f47}
+  .strip div:first-child{border-left:none}
+  .strip b{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--hivis);margin-bottom:2px}
+
+  /* LEAD: agitation */
+  .lead{background:var(--petrol);color:var(--paper);padding:56px 0}
+  .lead h2{color:var(--paper);margin-bottom:24px}
+  .lead .pain{border-left:3px solid var(--alarm);padding:2px 0 2px 18px;margin-bottom:22px}
+  .lead .pain p{font-size:19px;color:#e4e8e5}
+  .lead .pain b{color:#fff}
+  .lead .turn{font-size:20px;color:var(--paper);margin-top:8px}
+  .lead .turn b{color:var(--hivis)}
+
+  /* STORY */
+  .story{background:var(--paper);padding:54px 0}
+  .story .row{display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap}
+  .story .photo{flex:0 0 190px;width:190px;height:230px;border-radius:6px;
+    background:repeating-linear-gradient(45deg,#e7e2d3 0 12px,#efeaDB 12px 24px);border:2px dashed #c3bca6;
+    display:flex;align-items:center;justify-content:center;text-align:center;color:#a89f84;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;letter-spacing:.03em;padding:14px}
+  .story .txt{flex:1 1 300px;min-width:260px}
+  .story h2{color:var(--petrol);margin-bottom:14px}
+  .story p{font-size:18px;color:var(--graphite);margin-bottom:12px}
+  .story .sig{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--petrol)}
+
+  /* OFFER */
+  .offer{background:var(--panel);padding:54px 0;border-top:1px solid var(--line)}
+  .offer h2{color:var(--petrol);margin-bottom:26px}
+  .steps{position:relative}
+  .steps::before{content:"";position:absolute;left:23px;top:14px;bottom:60px;width:3px;background:repeating-linear-gradient(var(--line) 0 8px,transparent 8px 16px)}
+  .step{position:relative;padding:0 0 24px 66px}
+  .step .n{position:absolute;left:0;top:-2px;width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--hivis);font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:23px;display:flex;align-items:center;justify-content:center;z-index:2}
+  .step .t{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:23px;text-transform:uppercase;line-height:1.02;margin-bottom:3px;color:var(--petrol)}
+  .step .d{font-size:17px;color:var(--graphite)}
+  .promise{background:var(--ink);color:var(--paper);border-radius:8px;padding:22px 24px;margin-top:8px;font-size:18px;line-height:1.55}
+  .promise b{color:var(--hivis)}
+
+  /* CLOSE: two paths */
+  .close{background:var(--ink);color:var(--paper);padding:60px 0}
+  .close h2{color:var(--paper);text-align:center;margin-bottom:8px}
+  .close .kick{text-align:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#93a6ad;margin-bottom:30px}
+  .paths{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:34px}
+  .path{flex:1 1 260px;border-radius:8px;padding:24px 22px}
+  .path.a{background:#182b32;border:1px solid #2a3f47}
+  .path.b{background:var(--hivis);color:var(--ink);box-shadow:8px 8px 0 rgba(0,0,0,.3)}
+  .path .ph{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+  .path.a .ph{color:#7f9199}
+  .path.b .ph{color:var(--ink);opacity:.7}
+  .path .pt{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;text-transform:uppercase;line-height:1.05;margin-bottom:8px}
+  .path.a .pt{color:#c7d0cd}
+  .path p{font-size:16px;line-height:1.5}
+  .path.a p{color:#9fb0b7}
+  .pricebox{background:#182b32;border:1px solid #2a3f47;border-radius:8px;padding:26px;text-align:center;margin-bottom:24px}
+  .pricebox .fig{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:66px;line-height:.9;color:var(--hivis)}
+  .pricebox .fig small{display:block;font-family:'Barlow Semi Condensed';font-size:18px;font-weight:600;color:var(--paper);margin-top:8px;text-transform:none}
+  .pricebox .rr{font-size:16px;color:#d7ddd9;margin-top:14px;max-width:480px;margin:14px auto 0}
+
+  /* FAQ */
+  .faq{background:var(--paper);padding:54px 0}
+  .faq h2{color:var(--petrol);margin-bottom:24px}
+  .qa{border-bottom:1px solid var(--line);padding:18px 0}
+  .qa:first-of-type{border-top:1px solid var(--line)}
+  .qa .q{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--petrol);margin-bottom:6px;text-transform:uppercase;line-height:1.1}
+  .qa .a{font-size:17px;color:var(--graphite)}
+
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(15,30,36,.96);border-top:1px solid #2a3f47;padding:12px 16px;transform:translateY(120%);transition:transform .25s ease}
+  .sticky.show{transform:none}
+  .sticky a{display:block;text-align:center;background:var(--hivis);color:var(--ink);padding:15px;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;text-transform:uppercase;text-decoration:none}
+  .foot{background:var(--ink);color:#7f9199;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;padding:30px 18px;line-height:1.6}
+</style>
+</head>
+<body>
+
+  <!-- HERO: preheader, headline, subheader, CTA -->
+  <section class="hero">
+    <div class="ghost">€</div>
+    <div class="wrap">
+      <div class="brandrow"><span class="dot"></span><span class="nm">Leak Finder</span><span class="loc">Cork, Ireland</span></div>
+      <div class="pre">For Cork tradesmen. Plumbers, sparks, builders, chippies, landscapers.</div>
+      <h1>You're flat out every week. So where's the <span class="hl">money going?</span></h1>
+      <p class="sub">In one 30-minute call I find exactly where the callbacks, the quotes and the cash are slipping out of your business. Then I hand you a plain report and a four-day plan to plug it. No jargon. No laptop turned around at you.</p>
+      <div class="cta-wrap">
+        <a href="#book" class="btn">Book my free leak-check call →</a>
+        <div class="subcta" style="text-align:left">Ten minutes to see if it's for you · No charge · No sales pitch</div>
+      </div>
+      <div class="strip">
+        <div><b>Cork</b> trades only</div>
+        <div><b>30 min</b> to find it</div>
+        <div><b>1 week</b> to the fix</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD: agitate the specific pain -->
+  <section class="lead">
+    <div class="wrap rv">
+      <div class="seclabel">The bit nobody puts a number on</div>
+      <h2>You're brilliant at the job. It's everything around it that's bleeding you.</h2>
+      <div class="pain"><p>You're up a ladder, hands full, and the phone goes. You can't get to it. That missed call just rang <b>the next plumber down the road</b>, and booked him instead of you.</p></div>
+      <div class="pain"><p>A fella stops you Tuesday and asks what it'd cost. You mean to write it up. It's still in your head Friday. By then he's <b>two other quotes deep</b>.</p></div>
+      <div class="pain"><p>Job's done, everyone's happy, and the invoice sits there three weeks. Because when in God's name would you send it.</p></div>
+      <div class="pain"><p>And you're doing the books at <b>eleven on a Sunday night</b>, because there's no other hour left in the week.</p></div>
+      <p class="turn">None of that is you being bad at your trade. You're brilliant at your trade. It's the office side, and it's leaking money out of your business every single week. <b>And you couldn't tell me, hand on heart, how much.</b></p>
+      <p class="turn" style="margin-top:16px">That's the leak. I find it, put a real euro figure on it, and hand you the plan to stop it.</p>
+    </div>
+  </section>
+
+  <!-- STORY: authority + relatable + breakthrough -->
+  <section class="story">
+    <div class="wrap rv">
+      <div class="seclabel">The fella doing it</div>
+      <div class="row">
+        <div class="photo">[ your photo goes here ·<br>hi-vis, the van, a Cork street ·<br>this is the single biggest thing left to add ]</div>
+        <div class="txt">
+          <h2>I'm Jack. I find leaks.</h2>
+          <p>I came up around trades, worked with my hands, and I kept seeing the same thing. Good tradesmen, better at the actual graft than I'll ever be, quietly losing a fortune to the boring side of the business. And never once seeing where it went.</p>
+          <p>Not because they were thick. Because nobody ever sat down and showed them.</p>
+          <p>So I got a bit obsessed with it. Finding exactly where a trade bleeds money, and putting it in plain euro. That's the whole thing I do now.</p>
+          <div class="sig">Jack O'Regan, Cork</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER reveal: everything included + promise (no fake testimonials) -->
+  <section class="offer">
+    <div class="wrap rv">
+      <div class="seclabel">What you actually get</div>
+      <h2>Three things. That's it.</h2>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div class="t">A 30-minute call</div><div class="d">Straight questions about how the work really runs. No jargon, no selling. Just finding the leak.</div></div>
+        <div class="step"><div class="n">2</div><div class="t">A written report</div><div class="d">Every leak in plain euro, ranked, the exact fix beside each one. Read it in fifteen minutes, act on it that day.</div></div>
+        <div class="step"><div class="n">3</div><div class="t">A four-day plan</div><div class="d">Four moves, one a day, each marked "do it yourself" or "hand it to Jack". You leave knowing exactly what to do first.</div></div>
+      </div>
+      <div class="promise">Built for trades, in trade language, by a fella who's stood in the yard, not a suit with a spreadsheet. <b>You'll walk away knowing the one thing costing you most, and exactly what to do about it this week.</b> That's the promise.</div>
+    </div>
+  </section>
+
+  <!-- CLOSE: two paths + scarcity + CTA -->
+  <section class="close" id="book">
+    <div class="wrap rv">
+      <h2>You've two roads.</h2>
+      <div class="kick">Pick one.</div>
+      <div class="paths">
+        <div class="path a">
+          <div class="ph">The road you're on</div>
+          <div class="pt">Carry on as you are</div>
+          <p>Flat out. The leak bleeding away every week. Telling yourself you'll sort the office side someday, the way you've said the last two years.</p>
+        </div>
+        <div class="path b">
+          <div class="ph">The other road</div>
+          <div class="pt">Find it in 30 minutes</div>
+          <p>Know, to the euro, where the money's actually going. Walk out with a four-day plan to stop it, and the biggest fix already named.</p>
+        </div>
+      </div>
+      <div class="pricebox">
+        <div class="fig">€499<small>for my first three Cork trades, then €999</small></div>
+        <div class="rr">I'm doing the first three at half price to get the case studies. The call to see if it's even for you is free either way, and the money is the least of what you'll find leaking.</div>
+      </div>
+      <a href="https://wa.me/353894794158?text=Hi%20Jack%2C%20I%20want%20to%20book%20the%20free%20leak-check%20call." class="btn">Book my free leak-check call →</a>
+      <div class="subcta">Ten minutes on WhatsApp or the phone · No charge · No hard sell</div>
+    </div>
+  </section>
+
+  <!-- FAQ: objection handling -->
+  <section class="faq">
+    <div class="wrap rv">
+      <div class="seclabel">Straight answers</div>
+      <h2>Before you ask</h2>
+      <div class="qa"><div class="q">Is this just AI stuff I won't understand?</div><div class="a">No. I speak plain. The report's written so you can read it in fifteen minutes and know exactly what to do. If a fix needs setting up, I do that bit.</div></div>
+      <div class="qa"><div class="q">I don't have time for a call.</div><div class="a">It's thirty minutes, and it's the thirty minutes that finds you back hours every week after. If you genuinely can't spare it, that's usually the clearest sign you need it.</div></div>
+      <div class="qa"><div class="q">How is it only €499?</div><div class="a">Because you'd be one of my first three Cork trades and I want the case studies. After that it's €999. You're getting it half price for being early, not because it's worth less.</div></div>
+      <div class="qa"><div class="q">What if you don't find anything?</div><div class="a">Then you run a tight ship and I'll tell you so, straight, on a free call. But in every trade I've looked at there's money leaking somewhere, usually more than they'd have guessed.</div></div>
+      <div class="qa"><div class="q">Do I have to buy the fixes off you?</div><div class="a">Not a chance. Half the plan is stuff you do yourself in an afternoon. The bigger jobs I'll build if you want them done for you, but that's your call, not a catch.</div></div>
+      <div class="qa"><div class="q">I'm not techy. Is that a problem?</div><div class="a">It's the opposite. This is for the fella who's great with his hands and never had time for the office side. That's exactly who I built it for.</div></div>
+      <div style="height:28px"></div>
+      <a href="https://wa.me/353894794158?text=Hi%20Jack%2C%20I%20want%20to%20book%20the%20free%20leak-check%20call." class="btn">Book my free leak-check call →</a>
+    </div>
+  </section>
+
+  <div class="foot">Jack O'Regan · Cork · I find where trades lose money and help plug it.</div>
+  <div class="sticky" id="sticky"><a href="https://wa.me/353894794158?text=Hi%20Jack%2C%20I%20want%20to%20book%20the%20free%20leak-check%20call.">Book my free leak-check call →</a></div>
+
+<script>
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  var sticky=document.getElementById('sticky'), hero=document.querySelector('.hero'), bk=document.getElementById('book');
+  window.addEventListener('scroll',function(){
+    var past=window.scrollY>hero.offsetHeight-60, atBook=false;
+    if(bk){var r=bk.getBoundingClientRect(); atBook=r.top<window.innerHeight&&r.bottom>0;}
+    if(past&&!atBook) sticky.classList.add('show'); else sticky.classList.remove('show');
+  },{passive:true});
+</script>
+</body>
+</html>
