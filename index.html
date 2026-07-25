@@ -20,19 +20,21 @@
   button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--hivis);outline-offset:2px}
 
   /* ---------- app shell ---------- */
-  .app{max-width:600px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column}
+  .app{max-width:720px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column}
   .appbar{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;position:sticky;top:0;background:var(--petrol);border-bottom:1px solid var(--petrol2);z-index:5}
   .brand{display:flex;align-items:center;gap:9px}
   .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--hivis);box-shadow:0 0 0 3px rgba(245,179,36,.2)}
   .brand .nm{font-family:'Barlow Condensed',sans-serif;font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:15px;color:var(--paper)}
   .barstep{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8ea3ac;letter-spacing:.06em}
-  .screen{flex:1;padding:20px 16px 28px;animation:rise .3s ease}
+  .screen{flex:1;padding:22px 18px 30px;animation:rise .3s ease;display:flex;flex-direction:column}
+  .screen.center{justify-content:center;padding-bottom:64px}
 
-  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 20px}
-  h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:44px;line-height:1.03;margin:0 0 14px;text-transform:uppercase}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:32px 28px}
+  h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:50px;line-height:1.02;margin:0 0 16px;text-transform:uppercase}
   h1 .red{color:var(--alarm)}
   h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:29px;line-height:1.12;margin:0 0 8px}
   p{font-size:18px;color:var(--graphite);line-height:1.55;margin-bottom:10px}
+  @media (max-width:640px){ h1{font-size:39px;margin-bottom:14px} h2{font-size:26px} .panel{padding:26px 22px} }
   .mono{font-family:'IBM Plex Mono',monospace}
 
   .prog{height:6px;background:var(--petrol2);border-radius:3px;margin:0 0 22px;overflow:hidden}
@@ -43,8 +45,8 @@
     border:2px solid var(--line);border-radius:9px;font-family:inherit;font-size:18px;font-weight:500;line-height:1.35;cursor:pointer;transition:.12s}
   .chip:hover{border-color:var(--petrol)}
   .chip.on{background:var(--petrol);color:var(--paper);border-color:var(--petrol)}
-  .big{width:100%;padding:16px;background:var(--hivis);color:var(--petrol);border:none;border-radius:9px;
-    font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+  .big{width:100%;padding:19px;background:var(--hivis);color:var(--petrol);border:none;border-radius:10px;
+    font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
   .big[disabled]{background:var(--line);cursor:default}
   .ghost{width:100%;padding:12px;background:transparent;border:none;color:var(--graphite);font-family:'IBM Plex Mono',monospace;font-size:13px;cursor:pointer}
 
@@ -264,13 +266,14 @@
   function qText(qq){ return qq.q.indexOf("[unit]")>-1 ? qq.q.replace(/\[unit\]/g, tx(answers).unit) : qq.q; }
 
   function render(){
+    app.className = "screen" + (screen==="intro" ? " center" : "");
     if(screen==="intro"){
       setStep("");
       app.innerHTML = '<div class="panel">'+
-        '<h1>Where is your business <span class="red">losing money</span>?</h1>'+
+        '<h1>You are flat out every week. So where is the <span class="red">money going</span>?</h1>'+
         '<p>A few straight questions about how the work actually runs. At the end you get a rough euro figure for where the money is leaking, and the first thing worth fixing.</p>'+
-        '<p style="margin-bottom:20px">Two minutes, all taps, no typing. Nothing is saved.</p>'+
-        '<button class="big" id="start">Start</button>'+
+        '<p style="margin-bottom:22px">Two minutes, all taps, no typing. Nothing is saved.</p>'+
+        '<button class="big" id="start">Show me where</button>'+
         '</div>'+
         '<p class="foot">By Jack. I find where Cork trades lose money and help plug it.</p>';
       document.getElementById("start").onclick = function(){ screen="quiz"; step=0; render(); };
