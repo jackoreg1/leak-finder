@@ -29,18 +29,18 @@
   .screen{flex:1;padding:20px 16px 28px;animation:rise .3s ease}
 
   .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 20px}
-  h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:38px;line-height:1.03;margin:0 0 12px;text-transform:uppercase}
+  h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:44px;line-height:1.03;margin:0 0 14px;text-transform:uppercase}
   h1 .red{color:var(--alarm)}
-  h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:25px;line-height:1.12;margin:0 0 6px}
-  p{font-size:16px;color:var(--graphite);line-height:1.5;margin-bottom:8px}
+  h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:29px;line-height:1.12;margin:0 0 8px}
+  p{font-size:18px;color:var(--graphite);line-height:1.55;margin-bottom:10px}
   .mono{font-family:'IBM Plex Mono',monospace}
 
   .prog{height:6px;background:var(--petrol2);border-radius:3px;margin:0 0 22px;overflow:hidden}
   .prog .fill{height:100%;background:var(--hivis);border-radius:3px;transition:width .3s ease}
 
   .qnum{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--graphite);text-transform:uppercase;margin-bottom:8px}
-  .chip{display:block;width:100%;text-align:left;padding:15px 16px;margin-bottom:10px;background:#fff;color:var(--petrol);
-    border:2px solid var(--line);border-radius:9px;font-family:inherit;font-size:16px;font-weight:500;cursor:pointer;transition:.12s}
+  .chip{display:block;width:100%;text-align:left;padding:17px 18px;margin-bottom:11px;background:#fff;color:var(--petrol);
+    border:2px solid var(--line);border-radius:9px;font-family:inherit;font-size:18px;font-weight:500;line-height:1.35;cursor:pointer;transition:.12s}
   .chip:hover{border-color:var(--petrol)}
   .chip.on{background:var(--petrol);color:var(--paper);border-color:var(--petrol)}
   .big{width:100%;padding:16px;background:var(--hivis);color:var(--petrol);border:none;border-radius:9px;
@@ -132,51 +132,51 @@
   var QUESTIONS = [
     {id:"type", q:"What's your trade?", type:"chips",
       opts:["Landscaping / gardens","Plumbing / heating","Electrical","Building / carpentry","Roofing / groundworks","Another trade"]},
-    {id:"fork", q:"If I could hand you one of these on Monday morning, which do you take?", type:"chips",
+    {id:"crew", q:"Is it just you, or do you have a team?", type:"chips",
+      opts:["Just me","Me and one or two","A team of three or more"]},
+    {id:"jobValue", q:"What's an average job worth to you?", type:"number", prefix:"€", hint:"The bread and butter job, not your biggest. Rough is grand, it never leaves your phone."},
+    {id:"jobsWeek", q:"How many jobs in a normal week?", type:"number", hint:"Across the whole business."},
+    {id:"missed", q:"A call comes in and you can't answer. What usually happens?", type:"chips",
       opts:[
-        {t:"Two evenings a week back off the desk and the phone", v:"More time and money out of the work I've already got"},
-        {t:"The phone hopping with new work I've the room to take", v:"More customers, I've room to take on more"},
-        {t:"Both, but if I'm straight it's the time that's killing me", v:"Both, but time is the tighter one"}
+        {t:"We ring everyone back the same day", v:"None, we catch everything"},
+        {t:"We get to most of them", v:"1 to 3"},
+        {t:"A fair few never get called back", v:"4 to 10"},
+        {t:"I don't really track it, if I'm honest", v:"No idea, honestly"}
       ]},
-    {id:"jobValue", q:"What do you charge for one average [unit]?", type:"number", prefix:"€", hint:"Not your biggest job, the bread and butter one. Rough is grand, it never leaves your phone."},
-    {id:"jobsWeek", q:"How many of those [unit]s do you turn out in a normal week?", type:"number", hint:"The whole business, not just you."},
-    {id:"missed", q:"You're up a ladder, hands full, and the phone goes. In a week, how many of those do you never ring back?", type:"chips",
+    {id:"quotes", q:"How quickly does a quote actually go out?", type:"chips",
       opts:[
-        {t:"None. Every missed call gets a ring back, no exceptions", v:"None, we catch everything"},
-        {t:"A couple slip through, but I catch most of them", v:"1 to 3"},
-        {t:"A good few, and I'd say half never hear back from me", v:"4 to 10"},
-        {t:"Haven't a clue, and that's probably the answer right there", v:"No idea, honestly"}
+        {t:"Same day, while it's fresh", v:"On the spot, there and then"},
+        {t:"Within a few days", v:"Written up that evening"},
+        {t:"When I get a spare evening", v:"Days later, when I get to it"},
+        {t:"Some never go out at all", v:"Some never get sent at all"}
       ]},
-    {id:"quotes", q:"A fella stops you and asks what it'd cost. What actually happens after that?", type:"chips",
+    {id:"invoicing", q:"From finishing a job to money in the bank, how long?", type:"chips",
       opts:[
-        {t:"He gets a price out of me before I leave the drive", v:"On the spot, there and then"},
-        {t:"I write it up that night at the kitchen table", v:"Written up that evening"},
-        {t:"It rattles around in my head for days before it's sent", v:"Days later, when I get to it"},
-        {t:"Truth be told, a fair few never get sent at all", v:"Some never get sent at all"}
+        {t:"Paid within a few days", v:"Same day"},
+        {t:"A week or two", v:"Within the week"},
+        {t:"Often a month or more", v:"Two weeks or more"},
+        {t:"I'm forever chasing people", v:"Whenever I remember"}
       ]},
-    {id:"priceRaise", q:"When did you last put your prices up, and did it sting to do it?", type:"chips",
+    {id:"priceRaise", q:"When did you last raise your prices?", type:"chips",
       opts:[
-        {t:"This past year, and it barely got a murmur off anyone", v:"Within the last year"},
-        {t:"A year or two back now", v:"One to three years ago"},
-        {t:"Longer ago than I'd want to admit to you", v:"Longer than that"},
-        {t:"Never. Same prices for years while everything else went up", v:"Never, honestly"}
+        {t:"In the last year", v:"Within the last year"},
+        {t:"One to two years back", v:"One to three years ago"},
+        {t:"Longer than that", v:"Longer than that"},
+        {t:"Never, same prices for years", v:"Never, honestly"}
       ]},
-    {id:"admin", q:"Be straight with me. How much of your week gets eaten by the desk, the phone and the chasing?", type:"chips",
+    {id:"admin", q:"Hours a week on the office side, quotes, calls, paperwork, chasing?", type:"chips",
       opts:[
-        {t:"Next to nothing, I keep on top of it", v:"Under 2"},
-        {t:"An evening or two gone to it every week", v:"2 to 5"},
-        {t:"The guts of a full day, every single week", v:"5 to 10"},
-        {t:"More than a day. It's eating into family time now", v:"More than 10"}
+        {t:"Just a few", v:"Under 2"},
+        {t:"Most of an evening", v:"2 to 5"},
+        {t:"The best part of a day", v:"5 to 10"},
+        {t:"More than a day a week", v:"More than 10"}
       ]},
-    {id:"tried", q:"Have you had a go at fixing this yourself before now?", type:"chips",
+    {id:"fork", q:"If that side ran itself, what would you rather have?", type:"chips",
       opts:[
-        "Tried a few bits, nothing ever stuck",
-        "Keep meaning to, never get round to it",
-        "Paid for something once, waste of money",
-        "No. I just put the head down and grind through it"
-      ]},
-    {id:"story_head", q:"Last one. If you could hand one job off tomorrow and never touch it again, what is it? The bit that does your head in.", type:"story",
-      hint:"Type it or just talk it out, whatever suits. This is the bit I actually fix."}
+        {t:"My evenings and weekends back", v:"More time and money out of the work I've already got"},
+        {t:"More work coming in, I've the room to grow", v:"More customers, I've room to take on more"},
+        {t:"Both, but time first", v:"Both, but time is the tighter one"}
+      ]}
   ];
 
   /* =================== STATE =================== */
@@ -267,12 +267,12 @@
     if(screen==="intro"){
       setStep("");
       app.innerHTML = '<div class="panel">'+
-        '<h1>You are flat out every week. So where is the <span class="red">money going</span>?</h1>'+
-        '<p>Answer a few straight questions about how the business actually runs. This costs your biggest money leaks in euro, off your own numbers, and points at the one that is costing you most.</p>'+
-        '<p style="margin-bottom:18px">About three minutes. Type your answers or talk them out. Your figures stay on your phone, nothing is saved.</p>'+
-        '<button class="big" id="start">Show me where</button>'+
+        '<h1>Where is your business <span class="red">losing money</span>?</h1>'+
+        '<p>A few straight questions about how the work actually runs. At the end you get a rough euro figure for where the money is leaking, and the first thing worth fixing.</p>'+
+        '<p style="margin-bottom:20px">Two minutes, all taps, no typing. Nothing is saved.</p>'+
+        '<button class="big" id="start">Start</button>'+
         '</div>'+
-        '<p class="foot">Built by Jack, a Cork lad who finds where trades lose money and plugs it.</p>';
+        '<p class="foot">By Jack. I find where Cork trades lose money and help plug it.</p>';
       document.getElementById("start").onclick = function(){ screen="quiz"; step=0; render(); };
       return;
     }
