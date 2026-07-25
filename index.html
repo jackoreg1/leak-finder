@@ -17,9 +17,8 @@
     min-height:100vh;-webkit-font-smoothing:antialiased}
   @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
   @keyframes grow{from{width:0}}
-  button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--hivis);outline-offset:2px}
+  button:focus-visible,input:focus-visible{outline:3px solid var(--hivis);outline-offset:2px}
 
-  /* ---------- app shell ---------- */
   .app{max-width:720px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column}
   .appbar{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;position:sticky;top:0;background:var(--petrol);border-bottom:1px solid var(--petrol2);z-index:5}
   .brand{display:flex;align-items:center;gap:9px}
@@ -37,6 +36,12 @@
   @media (max-width:640px){ h1{font-size:39px;margin-bottom:14px} h2{font-size:26px} .panel{padding:26px 22px} }
   .mono{font-family:'IBM Plex Mono',monospace}
 
+  .gets{list-style:none;margin:4px 0 18px}
+  .gets li{display:flex;align-items:flex-start;gap:11px;font-size:18px;color:var(--petrol);margin-bottom:11px;line-height:1.4;font-weight:500}
+  .gets .tk{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:7px;background:var(--moss);color:#fff;font-size:15px;font-weight:800;flex:0 0 auto;margin-top:1px}
+  .trust{font-size:15px;color:var(--graphite);line-height:1.45;margin:0 0 20px}
+  .trust b{color:var(--petrol)}
+
   .prog{height:6px;background:var(--petrol2);border-radius:3px;margin:0 0 22px;overflow:hidden}
   .prog .fill{height:100%;background:var(--hivis);border-radius:3px;transition:width .3s ease}
 
@@ -50,54 +55,43 @@
   .big[disabled]{background:var(--line);cursor:default}
   .ghost{width:100%;padding:12px;background:transparent;border:none;color:var(--graphite);font-family:'IBM Plex Mono',monospace;font-size:13px;cursor:pointer}
 
-  input,textarea{width:100%;padding:14px 16px;font-size:18px;font-family:inherit;color:var(--petrol);
+  input{width:100%;padding:15px 16px;font-size:19px;font-family:inherit;color:var(--petrol);
     border:2px solid var(--line);border-radius:9px;background:#fff}
-  textarea{min-height:118px;resize:vertical;line-height:1.45}
   .numrow{display:flex;align-items:center;gap:8px;margin-bottom:14px}
-  .numrow .pre{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:700}
-  .numrow input{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:22px}
-  .micnote{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--graphite);margin:10px 0 14px}
+  .numrow .pre{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:700}
+  .numrow input{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:24px}
 
-  /* ---------- results dashboard ---------- */
-  .metric{background:var(--petrol);border-radius:12px;padding:20px;margin-bottom:14px;color:var(--paper)}
+  .metric{background:var(--petrol);border-radius:12px;padding:22px;margin-bottom:14px;color:var(--paper)}
   .metric .ml{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8ea3ac;margin-bottom:6px}
-  .metric .mv{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:48px;line-height:1;color:var(--hivis)}
-  .metric .mw{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--paper);margin-top:8px}
-  .metric .mw b{color:var(--alarm);background:#fff;padding:1px 6px;border-radius:4px}
-  .readline{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:19px;line-height:1.2;color:var(--petrol);margin:0 0 16px}
+  .metric .mv{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:46px;line-height:1;color:var(--hivis)}
+  .metric .mw{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--paper);margin-top:9px;line-height:1.4}
+  .readline{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:21px;line-height:1.2;color:var(--petrol);margin:0 0 16px}
 
   .tile{background:var(--panel);border:1px solid var(--line);border-radius:11px;margin-bottom:11px;overflow:hidden}
   .tile.p1{border-color:var(--alarm);border-width:2px}
-  .thead{display:flex;align-items:center;gap:12px;padding:15px 16px;cursor:pointer}
+  .thead{display:flex;align-items:center;gap:12px;padding:16px;cursor:pointer}
   .rank{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:12px;color:var(--paper);background:var(--graphite);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center}
   .tile.p1 .rank{background:var(--alarm)}
   .tmid{flex:1;min-width:0}
-  .ttitle{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;text-transform:uppercase;line-height:1.05}
+  .ttitle{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;text-transform:uppercase;line-height:1.05}
   .tsev{height:5px;background:var(--line);border-radius:3px;margin-top:7px;overflow:hidden}
   .tsev i{display:block;height:100%;background:var(--alarm);border-radius:3px;animation:grow .6s ease}
   .tcost{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:16px;color:var(--alarm);white-space:nowrap}
   .caret{color:var(--graphite);font-size:13px;font-family:'IBM Plex Mono',monospace;transition:.15s}
   .tile.open .caret{transform:rotate(90deg)}
   .tbody{max-height:0;overflow:hidden;transition:max-height .25s ease}
-  .tile.open .tbody{max-height:320px}
+  .tile.open .tbody{max-height:340px}
   .tbody .in{padding:0 16px 16px 52px}
-  .tbody .why{font-size:15px;color:var(--graphite);line-height:1.5}
+  .tbody .why{font-size:16px;color:var(--graphite);line-height:1.5}
 
-  .words{background:#fff;border-left:5px solid var(--hivis);border-radius:9px;padding:14px 16px;margin:16px 0 4px}
-  .words .wl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--graphite);margin-bottom:6px}
-  .words .wt{font-size:16px;color:var(--petrol);font-style:italic;line-height:1.5}
-  .refl{font-size:15px;color:var(--petrol);margin:8px 2px 0}
-
-  .action{background:var(--hivis);border-radius:11px;padding:14px 16px;margin:16px 0 6px}
+  .action{background:var(--hivis);border-radius:11px;padding:15px 17px;margin:16px 0 6px}
   .action b{font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:13px;letter-spacing:.08em;color:var(--petrol);display:block;margin-bottom:3px}
-  .action span{font-size:15px;color:var(--petrol)}
+  .action span{font-size:16px;color:var(--petrol)}
 
-  /* slim sell bar, not a pitch block */
-  .sellbar{border:1px solid var(--line);border-radius:11px;padding:14px 16px;margin-top:18px;background:var(--panel)}
-  .sellbar .st{font-size:14px;color:var(--graphite);line-height:1.45;margin-bottom:10px}
+  .sellbar{border:1px solid var(--line);border-radius:11px;padding:16px 17px;margin-top:18px;background:var(--panel)}
+  .sellbar .st{font-size:15px;color:var(--graphite);line-height:1.5;margin-bottom:12px}
   .sellbar .st b{color:var(--petrol)}
-  .sellbar button{padding:13px}
-  .foot{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8ea3ac;margin-top:16px;text-align:center}
+  .foot{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8ea3ac;margin-top:16px;text-align:center;line-height:1.5}
   .fld{margin-bottom:10px}
 </style>
 </head>
@@ -115,69 +109,78 @@
   /* =================== CONFIG =================== */
   var CONFIG = {
     JACK_WA: "353894794158",
-    WORKER_URL: "https://cork-leak.jackoregan505.workers.dev",
-    WEEKS: 48, ADMIN_RATE: 25, TRADE_RATE: 45, CAPTURE: 0.30, DESK_FLOOR: 3500, TOTAL_SHARE: 0.15, BIZ: "Cork"
+    WORKER_URL: "",            /* local calculator only until the new Worker is redeployed */
+    WEEKS: 48, RATE: 45, CAPTURE: 0.30, DESK_FLOOR: 3500, TOTAL_SHARE: 0.15, BIZ: "Cork"
   };
 
-  /* =================== TRADE TEXTURE =================== */
-  var TRADE = {
-    "Landscaping / gardens":{unit:"job", missed:"a clearance or a maintenance round", quote:"landscaping quote", inv:"the maintenance invoices"},
-    "Plumbing / heating":{unit:"callout", missed:"an emergency callout or a boiler job", quote:"bathroom or boiler quote", inv:"the callout invoices"},
-    "Electrical":{unit:"job", missed:"a fault callout or a rewire", quote:"rewire or board quote", inv:"the cert and job invoices"},
-    "Building / carpentry":{unit:"job", missed:"an extension or a fit-out enquiry", quote:"extension quote", inv:"the stage invoices"},
-    "Roofing / groundworks":{unit:"job", missed:"a storm-damage or a re-roof callout", quote:"roofing quote", inv:"the job invoices"},
-    "Another trade":{unit:"job", missed:"a callout or a new enquiry", quote:"quote", inv:"the invoices"}
+  /* =================== LOOKUPS =================== */
+  var MID = {
+    price:{ year:0.03, twoyr:0.06, longer:0.10, never:0.12 },
+    quote:{ same:0, days:0.05, evening:0.12, never:0.20 },
+    paid:{ days:0, week:0.01, month:0.03, chasing:0.05 },
+    admin:{ few:1.5, evening:3.5, day:7.5, moreday:12 },
+    missedCount:{ none:0, some:2, lots:7, noidea:4 },   /* callout only, a real count */
+    missedShare:{ none:0, some:0.02, lots:0.05, noidea:0.03 } /* other shapes, share of turnover */
   };
-  function tx(a){ return TRADE[a.type] || TRADE["Another trade"]; }
 
-  /* =================== QUESTIONS =================== */
+  /* =================== QUESTIONS (branching) =================== */
   var QUESTIONS = [
     {id:"type", q:"What's your trade?", type:"chips",
       opts:["Landscaping / gardens","Plumbing / heating","Electrical","Building / carpentry","Roofing / groundworks","Another trade"]},
-    {id:"crew", q:"Is it just you, or do you have a team?", type:"chips",
-      opts:["Just me","Me and one or two","A team of three or more"]},
-    {id:"jobValue", q:"What's an average job worth to you?", type:"number", prefix:"€", hint:"The bread and butter job, not your biggest. Rough is grand, it never leaves your phone."},
-    {id:"jobsWeek", q:"How many jobs in a normal week?", type:"number", hint:"Across the whole business."},
-    {id:"missed", q:"A call comes in and you can't answer. What usually happens?", type:"chips",
+
+    {id:"shape", q:"How does the work mostly come in?", type:"chips",
       opts:[
-        {t:"We ring everyone back the same day", v:"None, we catch everything"},
-        {t:"We get to most of them", v:"1 to 3"},
-        {t:"A fair few never get called back", v:"4 to 10"},
-        {t:"I don't really track it, if I'm honest", v:"No idea, honestly"}
+        {t:"Lots of small jobs and callouts", v:"callout"},
+        {t:"Bigger jobs or projects that run for weeks or months", v:"project"},
+        {t:"Ongoing contracts or the same regular clients", v:"contract"},
+        {t:"All sorts, no two weeks the same", v:"varied"}
       ]},
-    {id:"quotes", q:"How quickly does a quote actually go out?", type:"chips",
+
+    /* money, asked in the language of each shape */
+    {id:"jobValue", when:function(a){return a.shape==="callout";}, q:"Rough price of a typical callout or small job?", type:"number", prefix:"€", hint:"A rough figure is grand. It never leaves your phone."},
+    {id:"jobsWeek", when:function(a){return a.shape==="callout";}, q:"In a normal week, roughly how many do you do?", type:"number", hint:"Ballpark. A busy week and a quiet week averaged out."},
+
+    {id:"projValue", when:function(a){return a.shape==="project";}, q:"Rough value of a typical project?", type:"number", prefix:"€", hint:"Middle of the road, not your biggest ever. Rough is grand."},
+    {id:"projYear", when:function(a){return a.shape==="project";}, q:"How many of those do you take on in a year?", type:"number", hint:"Roughly. Even one or two is a real answer."},
+
+    {id:"monthly", when:function(a){return a.shape==="contract";}, q:"Roughly what do the main contracts bring in a month?", type:"number", prefix:"€", hint:"A rough monthly figure is all I need."},
+    {id:"monthly", when:function(a){return a.shape==="varied";}, q:"Roughly what comes in over a month, across everything?", type:"number", prefix:"€", hint:"A rough monthly figure is all I need. It never leaves your phone."},
+
+    /* universal leak questions */
+    {id:"missed", q:"A call or enquiry comes in and you can't get to it. What usually happens?", type:"chips",
       opts:[
-        {t:"Same day, while it's fresh", v:"On the spot, there and then"},
-        {t:"Within a few days", v:"Written up that evening"},
-        {t:"When I get a spare evening", v:"Days later, when I get to it"},
-        {t:"Some never go out at all", v:"Some never get sent at all"}
+        {t:"We get back to every one, no exceptions", v:"none"},
+        {t:"Most of them, but some slip", v:"some"},
+        {t:"A fair few never get chased back", v:"lots"},
+        {t:"No idea, honestly, and that's probably the answer", v:"noidea"}
       ]},
-    {id:"invoicing", q:"From finishing a job to money in the bank, how long?", type:"chips",
+    {id:"quotes", q:"When someone wants a price, how quick does it actually go out?", type:"chips",
       opts:[
-        {t:"Paid within a few days", v:"Same day"},
-        {t:"A week or two", v:"Within the week"},
-        {t:"Often a month or more", v:"Two weeks or more"},
-        {t:"I'm forever chasing people", v:"Whenever I remember"}
+        {t:"Same day, while it's fresh", v:"same"},
+        {t:"Within a few days", v:"days"},
+        {t:"When I get a spare evening", v:"evening"},
+        {t:"Some never go out at all", v:"never"}
       ]},
-    {id:"priceRaise", q:"When did you last raise your prices?", type:"chips",
+    {id:"invoicing", q:"From finishing the work to money in the bank, how long?", type:"chips",
       opts:[
-        {t:"In the last year", v:"Within the last year"},
-        {t:"One to two years back", v:"One to three years ago"},
-        {t:"Longer than that", v:"Longer than that"},
-        {t:"Never, same prices for years", v:"Never, honestly"}
+        {t:"Paid within a few days", v:"days"},
+        {t:"A week or two", v:"week"},
+        {t:"Often a month or more", v:"month"},
+        {t:"I'm forever chasing people", v:"chasing"}
+      ]},
+    {id:"priceRaise", q:"When did you last put your prices or rates up?", type:"chips",
+      opts:[
+        {t:"In the last year", v:"year"},
+        {t:"One to two years back", v:"twoyr"},
+        {t:"Longer than that", v:"longer"},
+        {t:"Never, same prices for years", v:"never"}
       ]},
     {id:"admin", q:"Hours a week on the office side, quotes, calls, paperwork, chasing?", type:"chips",
       opts:[
-        {t:"Just a few", v:"Under 2"},
-        {t:"Most of an evening", v:"2 to 5"},
-        {t:"The best part of a day", v:"5 to 10"},
-        {t:"More than a day a week", v:"More than 10"}
-      ]},
-    {id:"fork", q:"If that side ran itself, what would you rather have?", type:"chips",
-      opts:[
-        {t:"My evenings and weekends back", v:"More time and money out of the work I've already got"},
-        {t:"More work coming in, I've the room to grow", v:"More customers, I've room to take on more"},
-        {t:"Both, but time first", v:"Both, but time is the tighter one"}
+        {t:"Just a few", v:"few"},
+        {t:"Most of an evening", v:"evening"},
+        {t:"The best part of a day", v:"day"},
+        {t:"More than a day a week", v:"moreday"}
       ]}
   ];
 
@@ -187,93 +190,94 @@
   var screen = "intro", step = 0, answers = {}, report = null;
 
   function euro(n){ return "€" + Math.round(Number(n)||0).toLocaleString("en-IE"); }
+  function round100(n){ return Math.round((Number(n)||0)/100)*100; }
   function setStep(s){ barstep.textContent = s || ""; }
+  function active(){ return QUESTIONS.filter(function(q){ return !q.when || q.when(answers); }); }
 
-  var MID = {
-    admin:{"Under 2":1.5,"2 to 5":3.5,"5 to 10":7.5,"More than 10":12},
-    missed:{"None, we catch everything":0,"1 to 3":2,"4 to 10":7,"No idea, honestly":4},
-    price:{"Within the last year":0.03,"One to three years ago":0.06,"Longer than that":0.10,"Never, honestly":0.12},
-    quoteLoss:{"On the spot, there and then":0,"Written up that evening":0.05,"Days later, when I get to it":0.12,"Some never get sent at all":0.20},
-    invRisk:{"Same day":0,"Within the week":0.01,"Two weeks or more":0.03,"Whenever I remember":0.05}
-  };
+  /* =================== MATHS (local, mirrored by the Worker) =================== */
+  function annualRevenue(a){
+    if(a.shape==="callout") return (Number(a.jobValue)||0) * (Number(a.jobsWeek)||0) * CONFIG.WEEKS;
+    if(a.shape==="project") return (Number(a.projValue)||0) * (Number(a.projYear)||0);
+    return (Number(a.monthly)||0) * 12; /* contract or varied */
+  }
 
-  /* =================== LEAK MATHS (mirror of the Worker) =================== */
   function analyse(a){
-    var t = tx(a);
-    var jobValue = Number(a.jobValue)||0, jobsWeek = Number(a.jobsWeek)||0;
-    var annualRev = jobValue * jobsWeek * CONFIG.WEEKS;
+    var annualRev = annualRevenue(a);
     var adminHrs = MID.admin[a.admin] || 0;
-    var isCapacity = (a.fork||"").indexOf("More time") === 0 || (a.fork||"").indexOf("Both") === 0;
-    var rate = isCapacity ? CONFIG.TRADE_RATE : CONFIG.ADMIN_RATE;
+    var priceF = MID.price[a.priceRaise] || 0;
+    var quoteF = MID.quote[a.quotes] || 0;
+    var paidF  = MID.paid[a.invoicing] || 0;
 
-    var priceF = MID.price[a.priceRaise] || 0, invF = MID.invRisk[a.invoicing] || 0;
-    var quoteF = MID.quoteLoss[a.quotes] || 0, missedCount = MID.missed[a.missed] || 0;
     var undercharge = Math.round(annualRev * priceF);
-    var adminCost = Math.round(adminHrs * rate * CONFIG.WEEKS);
-    var invCost = Math.round(annualRev * invF);
-    var missedCost = Math.round(missedCount * CONFIG.CAPTURE * jobValue * CONFIG.WEEKS);
-    var quoteCost = Math.round(annualRev * quoteF);
-    var invCap = t.inv.charAt(0).toUpperCase()+t.inv.slice(1);
+    var adminCost   = Math.round(adminHrs * CONFIG.RATE * CONFIG.WEEKS);
+    var quoteCost   = Math.round(annualRev * quoteF);
+    var paidCost    = Math.round(annualRev * paidF);
+    var missedCost;
+    if(a.shape==="callout"){
+      var mc = MID.missedCount[a.missed] || 0;
+      missedCost = Math.round(mc * CONFIG.CAPTURE * (Number(a.jobValue)||0) * CONFIG.WEEKS);
+    } else {
+      missedCost = Math.round(annualRev * (MID.missedShare[a.missed] || 0));
+    }
 
     var leaks = [];
-    if(isCapacity){
-      if(undercharge>0) leaks.push({title:"Charging too little",cost:undercharge,mk:function(c){
-        return "You do about "+jobsWeek+" "+t.unit+"s a week at "+euro(jobValue)+" each, near enough "+euro(annualRev)+" a year. Your prices are "+(priceF>=0.1?"well overdue a rise":"due a nudge")+". A rise your good clients will not flinch at is "+euro(c)+" a year for the exact same work.";}});
-      if(adminCost>=CONFIG.DESK_FLOOR) leaks.push({title:"Your own time on the desk",cost:adminCost,mk:function(c){
-        return "About "+adminHrs+" hours a week goes on the desk instead of on the tools or at home. Valued at your skilled rate that is "+euro(c)+" a year sat doing paperwork.";}});
-      if(invCost>0) leaks.push({title:"Money sitting out there",cost:invCost,mk:function(c){
-        return invCap+" go out '"+(a.invoicing||"").toLowerCase()+"'. Money you have already earned sits unpaid, and some of it quietly never comes in. Conservatively that is "+euro(c)+" a year at risk.";}});
-    } else {
-      if(missedCost>0) leaks.push({title:"Enquiries going cold",cost:missedCost,mk:function(c){
-        return "About "+missedCount+" calls a week you cannot get to. If even "+Math.round(CONFIG.CAPTURE*100)+"% of a missed "+t.missed+" would have booked at "+euro(jobValue)+" a "+t.unit+", that is "+euro(c)+" a year walking to whoever answered instead.";}});
-      if(quoteCost>0) leaks.push({title:"Quotes that go stale",cost:quoteCost,mk:function(c){
-        return "Your "+t.quote+"s get done '"+(a.quotes||"").toLowerCase()+"'. A quote that lands days late, or never, is a "+t.unit+" someone else took. On your numbers that is roughly "+euro(c)+" a year.";}});
-      if(adminCost>=CONFIG.DESK_FLOOR) leaks.push({title:"Time lost to paperwork",cost:adminCost,mk:function(c){
-        return "About "+adminHrs+" hours a week goes on admin. Put back into the work or your evenings that is worth about "+euro(c)+" a year.";}});
-    }
+    if(undercharge>0) leaks.push({title:"Charging too little", cost:undercharge, mk:function(c){
+      return "On roughly "+euro(annualRev)+" a year going through the business, your prices are "+(priceF>=0.1?"well overdue a rise":"due a nudge")+". A rise your good clients will not flinch at is about "+euro(c)+" a year for the exact same work.";}});
+    if(missedCost>0) leaks.push({title:"Work slipping away", cost:missedCost, mk:function(c){
+      if(a.shape==="callout") return "You miss a fair share of calls, and a missed one is a job that rings the next fella instead. Even a slice of them booking is about "+euro(c)+" a year walking out the door.";
+      return "Enquiries that come in and never get chased back are work someone else picked up. On your numbers that is roughly "+euro(c)+" a year.";}});
+    if(quoteCost>0) leaks.push({title:"Quotes going cold", cost:quoteCost, mk:function(c){
+      return "A price that lands days late, or never, is work that went to whoever answered quicker. That is costing you around "+euro(c)+" a year.";}});
+    if(paidCost>0) leaks.push({title:"Money you're owed sitting out", cost:paidCost, mk:function(c){
+      return "Work you have already done, still waiting to be paid for, and some of it quietly never lands. Conservatively that is about "+euro(c)+" a year at risk.";}});
+    if(adminCost>=CONFIG.DESK_FLOOR) leaks.push({title:"Your time buried in the office", cost:adminCost, mk:function(c){
+      return "About "+adminHrs+" hours a week gone on the desk instead of on the tools or at home. Valued at a skilled rate that is around "+euro(c)+" a year.";}});
 
     leaks.sort(function(x,y){return y.cost-x.cost;});
     leaks = leaks.slice(0,3);
 
-    /* believability: cap the TOTAL at a share of turnover and scale proportionally,
-       so leaks stay distinct and calculated-looking, never identical capped figures. */
     var rawTotal = leaks.reduce(function(s,l){return s+l.cost;},0);
-    var totalCap = Math.round(annualRev * CONFIG.TOTAL_SHARE);
-    if(totalCap>0 && rawTotal>totalCap){
-      var f = totalCap/rawTotal;
-      for(var k=0;k<leaks.length;k++) leaks[k].cost = Math.round(leaks[k].cost * f);
-    }
+    var cap = Math.round(annualRev * CONFIG.TOTAL_SHARE);
+    if(cap>0 && rawTotal>cap){ var f=cap/rawTotal; for(var k=0;k<leaks.length;k++) leaks[k].cost=Math.round(leaks[k].cost*f); }
     for(var j=0;j<leaks.length;j++) leaks[j].why = leaks[j].mk(leaks[j].cost);
+
     var total = leaks.reduce(function(s,l){return s+l.cost;},0);
+    var mid = round100(total);
+    var low = round100(total*0.8), high = round100(total*1.2);
     var strong = total >= 8000;
     var headline;
     if(leaks.length===0) headline = "You run a genuinely tight ship. Nothing here worth chasing, and that is a good answer to have.";
-    else if(strong) headline = isCapacity ? "You are not short of work. You are leaving money and hours on the table." : "There is real money slipping out the side of the business every week.";
-    else headline = isCapacity ? "You run a fairly tight ship. Here is the money still worth going after." : "Not a lot is slipping. There is still a bit worth tightening up.";
+    else if(strong) headline = "There is real money slipping out the side of the business, every week you leave it.";
+    else headline = "Not a fortune, but there is money here worth tightening up.";
 
-    var quickWin = isCapacity
-      ? "Add 10% to the next "+t.quote+" you send. Nobody good will blink, and it is money for nothing changed."
-      : "Set an instant text back on your missed calls this week. It holds the "+t.unit+" while you finish the one you are on.";
+    var quickWin;
+    if(!leaks.length) quickWin = "";
+    else if(leaks[0].title==="Charging too little") quickWin = "Add 10 percent to the next price you send. Nobody good will blink, and it is money for nothing changed.";
+    else if(leaks[0].title==="Quotes going cold") quickWin = "Send the next quote the same day, even a rough one. Speed wins the job more than the price does.";
+    else if(leaks[0].title.indexOf("owed")>-1) quickWin = "Put a payment link or your IBAN straight on the invoice and send it the day you finish. It gets you paid faster for free.";
+    else if(leaks[0].title==="Work slipping away") quickWin = "Set a simple text-back on your missed calls this week. It holds the job while you finish the one you are on.";
+    else quickWin = "Block one hour, same time each week, for the office side. Doing it in one go beats it bleeding into every evening.";
 
-    var story = (a.story_head||"").trim() || (a.story_paid||"").trim();
-    var reflection = (story && leaks.length)
-      ? "You felt that before you saw the figure. What you just described is Leak 1 up there, "+euro(leaks[0].cost)+" a year."
-      : "";
-    return {total:total, headline:headline, leaks:leaks, quickWin:quickWin, reflection:reflection, capacity:isCapacity};
+    return { total:mid, low:low, high:high, headline:headline, leaks:leaks, quickWin:quickWin };
   }
 
   /* =================== RENDER =================== */
-  function qText(qq){ return qq.q.indexOf("[unit]")>-1 ? qq.q.replace(/\[unit\]/g, tx(answers).unit) : qq.q; }
-
   function render(){
     app.className = "screen" + (screen==="intro" ? " center" : "");
+
     if(screen==="intro"){
       setStep("");
-      app.innerHTML = '<div class="panel">'+
-        '<h1>You are flat out every week. So where is the <span class="red">money going</span>?</h1>'+
-        '<p>A few straight questions about how the work actually runs. At the end you get a rough euro figure for where the money is leaking, and the first thing worth fixing.</p>'+
-        '<p style="margin-bottom:22px">Two minutes, all taps, no typing. Nothing is saved.</p>'+
-        '<button class="big" id="start">Show me where</button>'+
+      app.innerHTML =
+        '<div class="panel">'+
+          '<h1>You are flat out every week. So where is the <span class="red">money going</span>?</h1>'+
+          '<p style="margin-bottom:14px">A few straight questions about how the work actually runs. Built for Cork trades, plumbers, sparks, builders, landscapers, groundworkers.</p>'+
+          '<ul class="gets">'+
+            '<li><span class="tk">✓</span><div>Your biggest money leaks, put in real euro</div></li>'+
+            '<li><span class="tk">✓</span><div>The one worth fixing first</div></li>'+
+            '<li><span class="tk">✓</span><div>Two minutes, all taps, no typing</div></li>'+
+          '</ul>'+
+          '<p class="trust"><b>No email, no sign up, no sales call unless you ask for one.</b> Your figures stay on your phone.</p>'+
+          '<button class="big" id="start">Show me where</button>'+
         '</div>'+
         '<p class="foot">By Jack. I find where Cork trades lose money and help plug it.</p>';
       document.getElementById("start").onclick = function(){ screen="quiz"; step=0; render(); };
@@ -281,21 +285,23 @@
     }
 
     if(screen==="quiz"){
-      var qq = QUESTIONS[step];
-      setStep((step+1)+" / "+QUESTIONS.length);
-      var pct = Math.round((step/QUESTIONS.length)*100);
+      var list = active();
+      if(step >= list.length) step = list.length-1;
+      var qq = list[step];
+      setStep((step+1)+" / "+list.length);
+      var pct = Math.round((step/list.length)*100);
       var body = '<div class="prog"><div class="fill" style="width:'+pct+'%"></div></div>'+
         '<div class="panel"><div class="qnum">Question '+(step+1)+'</div>'+
-        '<h2>'+qText(qq)+'</h2>'+ (qq.hint?'<p style="margin:0 0 16px">'+qq.hint+'</p>':'<div style="height:14px"></div>');
+        '<h2>'+qq.q+'</h2>'+ (qq.hint?'<p style="margin:0 0 16px">'+qq.hint+'</p>':'<div style="height:14px"></div>');
       var backBtn = step>0 ? '<button class="ghost" id="bk">&#8592; Back</button>' : '';
 
       if(qq.type==="chips"){
         for(var i=0;i<qq.opts.length;i++){
           var o = qq.opts[i];
-          var lab = (o && typeof o === "object") ? o.t : o;
-          var val = (o && typeof o === "object") ? o.v : o;
+          var lab = (o && typeof o==="object") ? o.t : o;
+          var val = (o && typeof o==="object") ? o.v : o;
           var on = (answers[qq.id]===val) ? " on" : "";
-          body += '<button class="chip'+on+'" data-v="'+val.replace(/"/g,'&quot;')+'">'+lab+'</button>';
+          body += '<button class="chip'+on+'" data-v="'+String(val).replace(/"/g,'&quot;')+'">'+lab+'</button>';
         }
         body += backBtn + '</div>';
         app.innerHTML = body;
@@ -317,40 +323,26 @@
         num.focus();
         return;
       }
-      if(qq.type==="story"){
-        body += '<textarea id="story" placeholder="Type here, or tap the mic and talk..."></textarea>'+
-          '<p class="micnote">Type it, or tap the microphone on your keyboard and just talk. Your call.</p>'+
-          '<button class="big" id="nx">Next</button>'+
-          '<button class="ghost" id="skip">Skip this one</button>'+ backBtn + '</div>';
-        app.innerHTML = body;
-        var ta = document.getElementById("story");
-        if(answers[qq.id]) ta.value = answers[qq.id];
-        document.getElementById("nx").onclick = function(){ next(qq.id, ta.value.trim()); };
-        document.getElementById("skip").onclick = function(){ next(qq.id, ""); };
-        var bk3=document.getElementById("bk"); if(bk3) bk3.onclick=goBack;
-        return;
-      }
     }
 
     if(screen==="analysing"){
       setStep("");
-      app.innerHTML = '<div class="panel" style="text-align:center;padding:44px 20px">'+
-        '<div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:800;font-size:28px;text-transform:uppercase;margin-bottom:10px">Running your numbers</div>'+
+      app.innerHTML = '<div class="panel" style="text-align:center;padding:46px 22px">'+
+        '<div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:800;font-size:30px;text-transform:uppercase;margin-bottom:10px">Running your numbers</div>'+
         '<div class="mono" id="busyLine" style="font-size:14px;color:var(--graphite)">Checking the pipes...</div></div>';
       var lines = ["Checking the pipes...","Costing the leaks...","Running your numbers...","Writing up the findings..."];
       var bi=0; if(window.__busy) clearInterval(window.__busy);
-      window.__busy = setInterval(function(){ bi=(bi+1)%lines.length; var e=document.getElementById("busyLine"); if(e){ e.textContent=lines[bi]; } else { clearInterval(window.__busy); } }, 1400);
+      window.__busy = setInterval(function(){ bi=(bi+1)%lines.length; var e=document.getElementById("busyLine"); if(e){ e.textContent=lines[bi]; } else { clearInterval(window.__busy); } }, 1300);
       return;
     }
 
     if(screen==="report" && report){
       if(window.__busy){ clearInterval(window.__busy); window.__busy=null; }
       setStep("Report");
-      var weekly = Math.round(report.total/CONFIG.WEEKS);
       var top = report.leaks.length ? report.leaks[0].cost : 1;
-      var inner = '<div class="metric"><div class="ml">Estimated annual leak</div>'+
+      var inner = '<div class="metric"><div class="ml">Rough money leaking a year</div>'+
         '<div class="mv">'+euro(report.total)+'</div>'+
-        (report.leaks.length ? '<div class="mw"><b>'+euro(weekly)+'</b> every week you leave it</div>' : '')+
+        (report.leaks.length ? '<div class="mw">Give or take, somewhere between '+euro(report.low)+' and '+euro(report.high)+' a year, on your own numbers.</div>' : '')+
         '</div>'+
         '<p class="readline">'+report.headline+'</p>';
 
@@ -358,33 +350,27 @@
         var l = report.leaks[i];
         var w = Math.max(8, Math.round(l.cost/top*100));
         var openCls = i===0 ? " open" : "";
-        inner += '<div class="tile'+(i===0?" p1":"")+openCls+'" data-i="'+i+'">'+
+        inner += '<div class="tile'+(i===0?" p1":"")+openCls+'">'+
           '<div class="thead">'+
             '<span class="rank">'+(i+1)+'</span>'+
             '<div class="tmid"><div class="ttitle">'+l.title+'</div><div class="tsev"><i style="width:'+w+'%"></i></div></div>'+
-            '<span class="tcost">'+euro(l.cost)+'/yr</span>'+
+            '<span class="tcost">~'+euro(l.cost)+'/yr</span>'+
             '<span class="caret">&#9656;</span>'+
           '</div>'+
           '<div class="tbody"><div class="in"><p class="why">'+l.why+'</p></div></div>'+
         '</div>';
       }
 
-      var rawStory = (answers.story_head||"").trim() || (answers.story_paid||"").trim();
-      if(rawStory && report.leaks.length){
-        inner += '<div class="words"><div class="wl">In your own words</div><div class="wt">“'+rawStory.replace(/</g,"&lt;")+'”</div></div>';
-        if(report.reflection) inner += '<p class="refl">'+report.reflection.replace(/</g,"&lt;")+'</p>';
-      }
-      if(report.leaks.length){
+      if(report.leaks.length && report.quickWin){
         inner += '<div class="action"><b>One free win to get you started</b><span>'+report.quickWin+'</span></div>';
       }
 
-      /* slim sell bar, not a pitch block. anchors the price to their own number, sells the money back not the tools */
       var sell;
       if(report.leaks.length){
-        sell = '<div class="st">That free win is one small patch. The <b>'+euro(report.total)+' a year</b> above is the full job, and the biggest leak is not a this-week fix, it needs a proper look. The paid <b>assessment</b> is a 15 minute call, then a written plan that goes and gets that money back, leak by leak. <b>€499</b> to recover it, my first three Cork trades, €999 after.</div>'+
+        sell = '<div class="st">That is the free read, off a two minute chat. The paid <b>assessment</b> is a proper look at the <b>'+euro(report.total)+' a year</b> above: every leak pinned down in euro, the exact fix for each, and a plan you can actually run. <b>€499</b> for my first three Cork trades, €999 after.</div>'+
           '<button class="big" id="fix">Book the call about your '+euro(report.total)+'</button>';
       } else {
-        sell = '<div class="st">You run a tight ship, so there is no big leak to chase here. If you want a proper set of eyes over the whole business anyway, the paid <b>assessment</b> is a 15 minute call and a written plan. <b>€499</b>, my first three Cork trades, €999 after.</div>'+
+        sell = '<div class="st">You run a tight ship, so there is no big leak to chase here. If you want a proper set of eyes over the whole business anyway, the paid <b>assessment</b> is a call and a written plan. <b>€499</b>, my first three Cork trades, €999 after.</div>'+
           '<button class="big" id="fix">Book a 15 minute call</button>';
       }
       inner += '<div class="sellbar">'+sell+'</div>'+
@@ -416,13 +402,13 @@
         var name = (document.getElementById("cname").value||"").trim();
         var biz = (document.getElementById("cbiz").value||"").trim();
         var phone = (document.getElementById("cphone").value||"").trim();
-        var lines = ["Hi Jack, I did the leak assessment and want to book the 15 minute call about the full assessment."];
+        var lines = ["Hi Jack, I did the leak assessment and want to book the 15 minute call."];
         if(name) lines.push("Name: "+name);
         if(biz) lines.push("Business: "+biz);
         if(phone) lines.push("Phone: "+phone);
         lines.push("Trade: "+(answers.type||"?"));
-        lines.push("Estimated annual leak: "+euro(report.total));
-        for(var i=0;i<report.leaks.length;i++) lines.push("- "+report.leaks[i].title+": "+euro(report.leaks[i].cost)+"/yr");
+        lines.push("Rough leak: "+euro(report.total)+" a year");
+        for(var i=0;i<report.leaks.length;i++) lines.push("- "+report.leaks[i].title+": ~"+euro(report.leaks[i].cost)+"/yr");
         var url = "https://wa.me/"+CONFIG.JACK_WA+"?text="+encodeURIComponent(lines.join("\n"));
         window.open(url,"_blank");
       };
@@ -432,24 +418,22 @@
 
   function next(id, val){
     answers[id] = val;
-    if(step+1 < QUESTIONS.length){ step++; render(); }
+    var list = active();
+    if(step+1 < list.length){ step++; render(); }
     else { runReport(); }
   }
   function goBack(){ if(step>0){ step--; render(); } }
 
   function runReport(){
     report = null; screen = "analysing"; render();
-    if(!CONFIG.WORKER_URL){ setTimeout(function(){ report = analyse(answers); screen="report"; render(); }, 700); return; }
+    if(!CONFIG.WORKER_URL){ setTimeout(function(){ report = analyse(answers); screen="report"; render(); }, 900); return; }
     var done = false;
     function fallback(){ if(done) return; done=true; report = analyse(answers); screen="report"; render(); }
     var timer = setTimeout(fallback, 20000);
     fetch(CONFIG.WORKER_URL, {method:"POST", headers:{"content-type":"application/json"}, body: JSON.stringify(answers)})
       .then(function(r){ return r.ok ? r.json() : Promise.reject(r.status); })
-      .then(function(rep){
-        if(done) return; done=true; clearTimeout(timer);
-        report = (rep && rep.leaks && rep.leaks.length && !rep.error) ? rep : analyse(answers);
-        screen="report"; render();
-      })
+      .then(function(rep){ if(done) return; done=true; clearTimeout(timer);
+        report = (rep && rep.leaks && rep.leaks.length && !rep.error) ? rep : analyse(answers); screen="report"; render(); })
       .catch(function(){ clearTimeout(timer); fallback(); });
   }
 
